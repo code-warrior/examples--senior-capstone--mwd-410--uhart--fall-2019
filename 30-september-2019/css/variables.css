@@ -1,0 +1,10 @@
+html {
+   --grid--col-width: 60px;
+   --grid--gutter-width: calc(var(--grid--col-width) / 3);
+   --grid--unit: calc(var(--grid--col-width) + var(--grid--gutter-width));
+   --font-size--primary: 20px;
+   --width--main: calc(12 * var(--grid--unit));
+   --font-stack--reading: 'Open Sans', sans-serif;
+   --font-stack--headings: Notable, sans-serif;
+   --color--main-text: #222;
+}

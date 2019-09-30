@@ -1,0 +1,13 @@
+:root {
+   font-size: var(--font-size--primary);
+}
+
+body {
+   font-family: var(--font-stack--reading);
+   color: var(--color--main-text);
+}
+
+main {
+   margin: auto;
+   width: var(--width--main);
+}

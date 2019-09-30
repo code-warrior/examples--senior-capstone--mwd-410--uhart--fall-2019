@@ -1,0 +1,17 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: var(--font-stack--headings);
+}
+
+h1 {
+   font-size: 2rem;
+}
+
+header {
+   margin: auto;
+   width: var(--width--main);
+}
