@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+////
+/// This is the main anchor file. In reality, this file would online contain
+/// @import or @use directives.
+/// @author Roy Vanegas
+////
+
+@import
+   'utilities/variables',
+   'utilities/mixins';
+
+body {
+   font: 18px / 1.3 $font-stack--reading;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   color: $color--foreground;
+   font-family: $font-stack--headings;
+}
+
+div {
+   background: {
+      position: top left;
+      color: transparent;
+      image: url('bg.png');
+      repeat: no-repeat;
+      attachment: fixed;
+   }
+
+   p {
+      color: $color--main;
+   }
+}
+
+p {
+   .highlight {
+      background-color: $color--secondary;
+   }
+}
+
+code {
+   &.js-example {
+      @include javascript-code;
+   }
+}

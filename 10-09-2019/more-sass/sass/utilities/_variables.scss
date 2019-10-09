@@ -1,0 +1,19 @@
+////
+/// This file contains all site-wide variables.
+/// @author Roy Vanegas
+////
+
+///
+/// Color variables
+///
+$color--bg: #bbb;
+$color--border: #888;
+$color--main: #222;
+$color--secondary: #ff0;
+$color--foreground: darken($color--bg, 10%);
+
+///
+/// Font variables/
+///
+$font-stack--headings: 'Open Sans', 'Helvetica Neue', sans-serif;
+$font-stack--reading: Montserrat, sans-serif;
