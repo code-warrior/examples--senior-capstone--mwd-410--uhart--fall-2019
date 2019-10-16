@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "website_name": "Iroducing JSON",
+      "url": "http://www.json.org/",
+      "dob": "December 17, 1995 03:24:00",
+      "amount": 31.0,
+      "is_logged_in": false,
+      "phone": {
+        "home": "(123) 456-7890",
+        "work": "(123) 098-7654"
+      },
+      "addresses": {
+        "home": {
+          "number": 200,
+          "street": "Bloomfield Ave",
+          "city": "West Hartford",
+          "state": "CT",
+          "ZIP": "06117"
+        },
+        "work": {
+          "number": 666,
+          "street": "Main Rd",
+          "city": "Hartford",
+          "ZIP": "66666"
+        }
+      }
+    }
+  ]
+}
