@@ -1,0 +1,32 @@
+// Compile via your CLI from the “sass-grid-example” folder:
+//    sass sass/main.scss:css/main.css
+$grid--column: 60px;                        // 60px
+$grid--gutter: $grid--column / 3;           // 20px
+$grid--unit: $grid--column + $grid--gutter; // 80px
+
+$width--desktop: (12 * $grid--unit);        // 960px;
+$width--tablet: (9 * $grid--unit);          // 720px;
+$width--mobile: (4 * $grid--unit);          // 320px;
+
+main {
+   margin: auto;
+   width: $width--desktop;
+}
+
+header {
+   h1 {
+      text-align: center;
+   }
+}
+
+@media (max-width: $width--desktop) {
+   main {
+      width: $width--tablet;
+   }
+}
+
+@media (max-width: $width--tablet) {
+   main {
+      width: $width--mobile;
+   }
+}
