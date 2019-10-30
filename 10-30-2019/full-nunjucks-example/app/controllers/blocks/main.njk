@@ -1,0 +1,43 @@
+
+<main>
+   <div>
+      {%- for data in data -%}
+         {%- for section in data.section -%}
+            {% for content in section.content %}
+      <div>{{ content | safe }}</div>
+            {%- endfor -%}
+         {%- endfor -%}
+      {%- endfor %}
+   </div>
+
+   {% for section in sections %}
+   <section id="{{ section.id }}">
+      <h2><span class="fa-container"><span class="{{ section.class }}"></span></span> {{ section.title}}</h2>
+
+      {%- for content in section.content -%}
+         {%- if content.blockquote -%}
+      <blockquote>{{ content.blockquote | safe }}</blockquote>
+         {%- else -%}
+      <p>{{ content | safe }}</p>
+         {%- endif -%}
+      {%- endfor -%}
+
+      {% for item in section.list %}
+         {% if loop.first %}
+      <ul>
+         <li>{{ item | safe }}</li>
+         {% else %}
+         <li>{{ item | safe }}</li>
+         {% endif %}
+         {% if loop.last %}
+      </ul>
+         {% endif %}
+      {% endfor %}
+
+      {% for data in section.data %}
+      <h3>{{ data.section_sub_heading | safe }}</h3>
+      <p>{{ data.content | safe }}</p>
+      {% endfor %}
+   </section>
+   {% endfor %}
+</main>

@@ -1,0 +1,24 @@
+{# The dashes strip leading or trailing whitespace, depending on whether you place them at the beginning and/or end. #}
+{%- import 'app/controllers/variables.njk' as vars -%}
+{%- import 'app/controllers/macros/layouts.njk' as layouts -%}
+{%- import 'app/controllers/macros/nonlayouts.njk' as nonlayouts -%}
+<!DOCTYPE html>
+<html lang="en">
+{{ nonlayouts.head(vars.title, vars.description) }}
+<body>
+{# Print an HTML comment about using an old version of Internet Explorer. #}
+{%- include 'app/controllers/blocks/ie_version_warning.njk' -%}
+
+{# Print the header element. #}
+{%- include 'app/controllers/blocks/header.njk' -%}
+
+{# Print the header-level nav element via a macro. (There’s another one for the footer. Thus, the macro instead of a block.) Note: “links” refers to the links object in links-file.json. #}
+{{ layouts.nav('header', links) }}
+
+{# Print the main element. #}
+{%- include 'app/controllers/blocks/main.njk' -%}
+
+{# Print the footer element. #}
+{%- include 'app/controllers/blocks/footer.njk' -%}
+</body>
+</html>
