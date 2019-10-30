@@ -12,7 +12,7 @@ let validateHTML = () => {
 let compressHTML = () => {
     return src(`html/*.html`)
         .pipe(htmlCompressor({collapseWhitespace: true}))
-        .pipe(dest(`app/`));
+        .pipe(dest(`prod/`));
 };
 
 let serve = () => {
