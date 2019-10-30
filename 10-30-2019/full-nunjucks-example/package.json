@@ -13,6 +13,3 @@
   },
   "author": "Roy Vanegas"
 }
-
-npm i --save-dev browser-sync@2.26.3
-npm i --save-dev del@3.0.0
