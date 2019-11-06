@@ -1,0 +1,170 @@
+{
+  "sections": [
+    {
+      "id": "description",
+      "class": "fa fa-info",
+      "title": "Description (defined in app | models | sections-file.json)",
+      "content": [
+        "Description content, paragraph ONE. Description content, paragraph ONE. Description content, paragraph ONE. Description content, paragraph ONE. Description content, paragraph ONE. Description content, paragraph ONE. Description content, paragraph ONE. Description content, paragraph ONE. Description content, paragraph ONE. Description content, paragraph ONE. Description content, paragraph ONE. Description content, paragraph ONE. Description content, paragraph ONE. Description content, paragraph ONE. Description content, paragraph ONE. Description content, paragraph ONE.",
+        {
+          "blockquote": "Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content. Blockquote content."
+        },
+        "Description content, paragraph TWO. Description content, paragraph TWO. Description content, paragraph TWO. Description content, paragraph TWO. Description content, paragraph TWO. Description content, paragraph TWO. Description content, paragraph TWO. Description content, paragraph TWO. Description content, paragraph TWO. Description content, paragraph TWO. Description content, paragraph TWO. Description content, paragraph TWO. Description content, paragraph TWO. Description content, paragraph TWO. Description content, paragraph TWO. Description content, paragraph TWO.",
+        "Description content, paragraph THREE. Description content, paragraph THREE. Description content, paragraph THREE. Description content, paragraph THREE. Description content, paragraph THREE. Description content, paragraph THREE. Description content, paragraph THREE. Description content, paragraph THREE. Description content, paragraph THREE. Description content, paragraph THREE. Description content, paragraph THREE. Description content, paragraph THREE. Description content, paragraph THREE. Description content, paragraph THREE. Description content, paragraph THREE.",
+        "Description content, paragraph LAST, this time interpolated with some <a href=\"https://www.w3.org/html/\" target=\"_blank\" rel=\"noopener\"><abbr title=\"HyperText Markup Language\">HTML</abbr></a>. Description content, paragraph LAST, this time interpolated with some <a href=\"https://www.w3.org/html/\" target=\"_blank\" rel=\"noopener\"><abbr title=\"HyperText Markup Language\">HTML</abbr></a>. Description content, paragraph LAST, this time interpolated with some <a href=\"https://www.w3.org/html/\" target=\"_blank\" rel=\"noopener\"><abbr title=\"HyperText Markup Language\">HTML</abbr></a>. Description content, paragraph LAST, this time interpolated with some <a href=\"https://www.w3.org/html/\" target=\"_blank\" rel=\"noopener\"><abbr title=\"HyperText Markup Language\">HTML</abbr></a>. Description content, paragraph LAST, this time interpolated with some <a href=\"https://www.w3.org/html/\" target=\"_blank\" rel=\"noopener\"><abbr title=\"HyperText Markup Language\">HTML</abbr></a>. Description content, paragraph LAST, this time interpolated with some <a href=\"https://www.w3.org/html/\" target=\"_blank\" rel=\"noopener\"><abbr title=\"HyperText Markup Language\">HTML</abbr></a>. Description content, paragraph LAST, this time interpolated with some <a href=\"https://www.w3.org/html/\" target=\"_blank\" rel=\"noopener\"><abbr title=\"HyperText Markup Language\">HTML</abbr></a>. Description content, paragraph LAST, this time interpolated with some <a href=\"https://www.w3.org/html/\" target=\"_blank\" rel=\"noopener\"><abbr title=\"HyperText Markup Language\">HTML</abbr></a>. "
+      ]
+    },
+    {
+      "id": "learning-outcomes",
+      "class": "fa fa-list",
+      "title": "Learning Outcomes (defined in app | models | sections-file.json)",
+      "content": [
+        "Upon successful completion of this course, students will understand..."
+      ],
+      "list": [
+        "Item A;",
+        "Item B;",
+        "Item C;",
+        "Item D;",
+        "Item E;",
+        "Item F;",
+        "Item G;",
+        "Item H;",
+        "Item I;",
+        "Item J;"
+      ]
+    },
+    {
+      "id": "class-rules",
+      "class": "fa fa-gavel",
+      "title": "Class Rules (defined in app | models | sections-file.json)",
+      "content": [
+        "This is an important rule, and it’s rule ONE.",
+        "This is an important rule, and it’s rule TWO.",
+        "This is an important rule, and it’s rule THREE.",
+        "This is an important rule, and it’s rule FOUR."
+      ]
+    },
+    {
+      "id": "software-requirements",
+      "class": "fa fa-download",
+      "title": "Software Requirements (defined in app | models | sections-file.json)",
+      "content": [
+        "All the required software for this course is free.",
+        "For Mac users, <em>most</em> of the installation process is automated using <a href=\"https://github.com/code-warrior/install-web-dev-software\" target=\"_blank\" rel=\"noopener\">this script</a>. Items below marked with a <sup class=\"footnote\">※</sup> are not included in the installer script — they must be installed manually.",
+        "For Windows and Linux users, <em>all</em> the software listed below must be installed manually."
+      ],
+      "data": [
+        {
+          "section_sub_heading": "GitHub (Mac, Windows, and Linux)",
+          "content": [
+            "All in-class examples, assignments, and help is done via GitHub. Once you’ve opened an account at <a href=\"https://github.com/\" target=\"_blank\" rel=\"noopener\">GitHub</a>, download the client for your computer <a href=\"https://desktop.github.com/\" target=\"_blank\" rel=\"noopener\">here</a>."
+          ]
+        },
+        {
+          "section_sub_heading": "Text Editor (Mac, Windows, and Linux)",
+          "content": [
+            "The code you write will require a text editor. And, although there are many on the market, such as Brackets (open source), Sublime Text (nagware), and Visual Studio Code (open source), <a href=\"https://atom.io/\" target=\"_blank\" rel=\"noopener\">Atom</a> (open source) is the only editor supported in class."
+          ]
+        },
+        {
+          "section_sub_heading": "Markdown Editor/Viewer (Mac, Windows, and Linux)",
+          "content": [
+            "Although a text editor will suffice to view and edit Markdown files, some may want a full-featured program to deal with Markdown. We’ll use <a href=\"https://typora.io/\" target=\"_blank\" rel=\"noopener\">Typora</a> in class."
+          ]
+        },
+        {
+          "section_sub_heading": "Browsers (Mac and Windows)<sup class=\"footnote\">※</sup>",
+          "content": [
+            "Download all the browsers available at <a href=\"https://browsehappy.com/\" target=\"_blank\" rel=\"noopener\">Browse Happy</a>. Some of the students in my more in-depth classes might also want <a href=\"https://www.google.com/chrome/browser/canary.html\" target=\"_blank\" rel=\"noopener\">Chrome Canary</a>, <a href=\"https://developer.apple.com/safari/technology-preview/\" target=\"_blank\" rel=\"noopener\">Safari Technology Preview</a>, <a href=\"https://www.mozilla.org/en-US/firefox/channel/desktop/#developer\" target=\"_blank\" rel=\"noopener\">Firefox Developer Edition</a>, and <a href=\"https://www.mozilla.org/en-US/firefox/channel/desktop/#nightly\" target=\"_blank\" rel=\"noopener\">Firefox Nightly</a>. I use Chrome and Firefox in class."
+          ]
+        },
+        {
+          "section_sub_heading": "File Transfer Protocol (Mac, Windows, and Linux)<sup class=\"footnote\">※</sup>",
+          "content": [
+            "To transfer files between our local machines and a server, we’ll use <a href=\"https://filezilla-project.org/download.php?type=client\" target=\"_blank\" rel=\"noopener\">FileZilla</a>."
+          ]
+        },
+        {
+          "section_sub_heading": "Fonts (Mac, Windows, and Linux)",
+          "content": [
+            "In addition to the stock issue, monospace/fixed-width fonts included with your <abbr title=\"Operating System\">OS</abbr>, give <a href=\"https://github.com/IBM/plex/releases/tag/v1.2.3\" target=\"_blank\" rel=\"noopener\">IBM Plex</a>, <a href=\"https://www.fontsquirrel.com/fonts/fira-mono\" target=\"_blank\" rel=\"noopener\">Fira Mono</a>, <a href=\"https://design.ubuntu.com/font/\" target=\"_blank\" rel=\"noopener\">Ubuntu Mono</a>, <a href=\"https://www.fontsquirrel.com/fonts/Anonymous-Pro\" target=\"_blank\" rel=\"noopener\">Anonymous Pro</a>, or <a href=\"https://www.fontsquirrel.com/fonts/Inconsolata\" target=\"_blank\" rel=\"noopener\">Inconsolata</a> a try."
+          ]
+        },
+        {
+          "section_sub_heading": "Command Line Interface",
+          "content": [
+            "Mac and Linux users do not have to install a Command Line Interface, or <abbr title=\"Command Line Interface\">CLI</abbr>, because these operating systems already have The Terminal installed. Windows users, however, might want to install <a href=\"https://cygwin.com/install.html\" target=\"_blank\" rel=\"noopener\">Cygwin</a>."
+          ]
+        },
+        {
+          "section_sub_heading": "Browser Extension for Accessibility Testing<sup class=\"footnote\">※</sup>",
+          "content": [
+            "Available for Chrome and Firefox, <a href=\"https://www.deque.com/axe/\" target=\"_blank\" rel=\"noopener\">Axe</a> is a browser extension that checks the accessibility of your web pages."
+          ]
+        },
+        {
+          "section_sub_heading": "Web Development Environment Configuration Files<sup class=\"footnote\">※</sup>",
+          "content": [
+            "Once all the software above has been installed, go <a href=\"https://github.com/code-warrior/web-dev-env-config-files\" target=\"_blank\" rel=\"noopener\">here</a> and follow the instructions in the <code>README.md</code> file."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "students-with-disabilities",
+      "class": "fa fa-info",
+      "title": "Students with Disabilities (defined in app | models | sections-file.json)",
+      "content": [
+        "Students with disabilities paragraph. Students with disabilities paragraph. Students with disabilities paragraph. Students with disabilities paragraph. Students with disabilities paragraph. Students with disabilities paragraph. Students with disabilities paragraph. Students with disabilities paragraph. Students with disabilities paragraph. Students with disabilities paragraph. Students with disabilities paragraph. Students with disabilities paragraph. Students with disabilities paragraph. Students with disabilities paragraph."
+      ]
+    },
+    {
+      "id": "contact",
+      "class": "fa fa-envelope",
+      "title": "Contact (defined in app | models | sections-file.json)",
+      "content": [
+        "My email address is vanegas at hartford dot edu. However, I only communicate with students over email in emergency situations (death, divorce, personal tragedy, pet emergency, etc). For matters related to the course, see me before class, during the break, after class, during office hours, or make an appointment."
+      ]
+    },
+    {
+      "id": "schedule"
+    },
+    {
+      "id": "projects",
+      "class": "fa fa-pencil-ruler",
+      "title": "Projects (defined in app | models | sections-file.json)",
+      "content": [
+        "All projects will be available on GitHub."
+      ],
+      "list": [
+        "<b>Project I</b>: 20%",
+        "<b>Project II</b>: 20%",
+        "<b>Project III</b>: 20%",
+        "<b>Project IV</b>: 20%",
+        "<b>Project V</b>: 20%"
+      ]
+    },
+    {
+      "id": "resources",
+      "class": "fa fa-question",
+      "title": "Resources",
+      "content": [
+        "Below is a short list of HTML, CSS, and JavaScript companion resources useful to the material we cover in class."
+      ],
+      "list": [
+        "Node’s <a href=\"https://nodejs.org/en/\" target=\"_blank\" rel=\"noopener\">home page</a>.",
+        "Gulp’s <a href=\"https://gulpjs.com/\" target=\"_blank\" rel=\"noopener\">home page</a>.",
+        "<a href=\"https://eslint.org/\" target=\"_blank\" rel=\"noopener\">ESLint</a>, the JavaScript code linting tool.",
+        "<a href=\"https://meta.stackoverflow.com/questions/280478/why-not-w3schools-com\" target=\"_blank\" rel=\"noopener\">Avoid W3Schools</a>; <a href=\"https://www.w3fools.com/\" target=\"_blank\" rel=\"noopener\">W3Fools</a> has been the definitive intervention since 2011.",
+        "<a href=\"https://developer.mozilla.org/en-US/\" target=\"_blank\" rel=\"noopener\"><abbr title=\"Mozilla Developer Network\">MDN</abbr></a>: A learning resource for developers by developers.",
+        "A <a href=\"http://specificity.keegan.st/\" target=\"_blank\" rel=\"noopener\">specificity calculator</a> that is useful in reinforcing the concepts of specificity.",
+        "A <a href=\"https://cssgradient.io/\" target=\"_blank\" rel=\"noopener\">CSS3 gradient generator</a> that helps with the unwieldy CSS3 gradient syntax.",
+        "<a href=\"https://caniuse.com/\" target=\"_blank\" rel=\"noopener\">Can I Use</a> a CSS, HTML, JavaScript, or other web-based syntax in new code?",
+        "<a href=\"http://html5doctor.com/\" target=\"_blank\" rel=\"noopener\">HTML5 Doctor</a> is a tutorials/blog about HTML5.",
+        "<a href=\"https://developers.google.com/web/\" target=\"_blank\" rel=\"noopener\">Web Fundamentals</a> is a set of tutorials and tools from Google.",
+        "Chris Coyier’s <a target=\"_blank\" href=\"https://css-tricks.com/\">CSS-Tricks</a> provides CSS-based tutorials and — of course — tricks."
+      ]
+    }
+  ]
+}

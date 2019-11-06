@@ -1,0 +1,29 @@
+{#
+   // ------------------------------------------------------------------------------
+   // NAV
+   //
+   // choice defines whether you want the header-specific links or the
+   //   non-header-specific links, which go in the footer.
+   //
+   // linksObject is a JSON object that references links-file.json (in the folder
+   //   app/models) that contains all the names, anchors, and classes used in this
+   //   navigation.
+   // ------------------------------------------------------------------------------
+#}
+{% macro nav(choice, linksObject) %}
+<nav>
+   <ul>
+      {%- for link in linksObject -%}
+         {%- if choice == "header" %}
+            {% for item in link.header_nav %}
+      <li><a href="{{ item.anchor }}">{{ item.name }}</a></li>
+            {%- endfor -%}
+         {%- else -%}
+            {% for item in link.footer_nav %}
+      <li><a href="{{ item.anchor }}">{{ item.name | safe}}</a></li>
+            {%- endfor -%}
+         {%- endif %}
+      {%- endfor %}
+   </ul>
+</nav>
+{%- endmacro -%}

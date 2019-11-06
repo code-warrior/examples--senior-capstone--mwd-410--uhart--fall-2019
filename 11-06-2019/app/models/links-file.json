@@ -1,0 +1,62 @@
+{
+  "links": [
+    {
+      "header_nav": [
+        {
+          "name": "description edbob",
+          "anchor": "#edbob"
+        },
+        {
+          "name": "learning outcomes (defined in app | models | links-file.json)",
+          "anchor": "#learning-outcomes"
+        },
+        {
+          "name": "class rules (defined in app | models | links-file.json)",
+          "anchor": "#class-rules"
+        },
+        {
+          "name": "software requirements (defined in app | models | links-file.json)",
+          "anchor": "#software-requirements"
+        },
+        {
+          "name": "students with disabilities (defined in app | models | links-file.json)",
+          "anchor": "#students-with-disabilities"
+        },
+        {
+          "name": "contact (defined in app | models | links-file.json)",
+          "anchor": "#contact"
+        },
+        {
+          "name": "projects (defined in app | models | links-file.json)",
+          "anchor": "#projects"
+        },
+        {
+          "name": "resources (defined in app | models | links-file.json)",
+          "anchor": "#resources"
+        }
+      ],
+      "footer_nav": [
+        {
+          "name": "GitHub (defined in app | models | links-file.json)",
+          "anchor": "https://github.com/code-warrior/web-programming"
+        },
+        {
+          "name": "Nunjucks (defined in app | models | links-file.json)",
+          "anchor": "https://mozilla.github.io/nunjucks/"
+        },
+        {
+          "name": "Gulp (defined in app | models | links-file.json)",
+          "anchor": "https://gulpjs.com/"
+        },
+        {
+          "name": "<abbr title='Syntactically Awesome Style Sheets'>Sass</abbr> (defined in app | models | links-file.json)",
+          "anchor": "https://sass-lang.com/"
+        },
+        {
+          "name": "Axe (defined in app | models | links-file.json)",
+          "anchor": "https://chrome.google.com/webstore/detail/axe/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US"
+        }
+      ]
+    }
+  ]
+}
