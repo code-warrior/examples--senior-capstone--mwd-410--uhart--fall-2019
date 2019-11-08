@@ -1,0 +1,37 @@
+{#
+   // ------------------------------------------------------------------------------
+   // NAV
+   //
+   // choice defines whether you want to walk the header array in the file, or the
+   //   footer array.
+   //
+   // linksArray is a JSON object that references the “links” array in the file
+   //   links-file.json (see the folder app/models). When this macro is invoked, it
+   //   must receive as its argument the name of the top-level object (“links”) in
+   //   order to reference the correct item in “links-file.json”.
+   // ------------------------------------------------------------------------------
+#}
+{% macro nav(choice, linksArray) %}
+<nav>
+   <ul>
+      {%- for allLinks in linksArray -%}
+         {%- if choice == "header" %}          {# This section is run for “header” #}
+            {% for aHeaderLinkItem in allLinks.header %}
+      <li><a href="{{ aHeaderLinkItem.anchor }}">{{ aHeaderLinkItem.name }}</a></li>
+            {%- endfor -%}                     {# And ends here. #}
+         {%- else -%}                      {# This section is run for non-“header” #}
+            {% for aFooterLinkItem in allLinks.footer %}
+      <li><a href="{{ aFooterLinkItem.anchor }}">{{ aFooterLinkItem.name | safe}}</a></li>
+            {%- endfor -%}                 {# And ends here. #}
+         {%- endif %}
+      {%- endfor %}
+   </ul>
+</nav>
+{%- endmacro -%}
+
+{#
+
+linksArray[0].header[4].name
+linksArray[0].header[4].anchor
+
+#}

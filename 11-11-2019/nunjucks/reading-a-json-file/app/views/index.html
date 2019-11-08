@@ -1,0 +1,16 @@
+{%- import 'app/controllers/variables.njk' as vars -%}
+{%- import 'app/controllers/macros/layouts.njk' as layouts -%}
+{%- import 'app/controllers/macros/nonlayouts.njk' as nonlayouts -%}
+<!DOCTYPE html>
+<html lang="{{ vars.contentLanguage }}">
+{{ nonlayouts.head(vars.title, vars.description) }}
+<body>
+   <header>
+{# “links” is a reference to the “links” array in the file links-file.json. The name MUST match. #}
+{{- layouts.nav('header', links) -}}
+   </header>
+   <footer>
+{{- layouts.nav('footer', links) -}}
+   </footer>
+</body>
+</html>

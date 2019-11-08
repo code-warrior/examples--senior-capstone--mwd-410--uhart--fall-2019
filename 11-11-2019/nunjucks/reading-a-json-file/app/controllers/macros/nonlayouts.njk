@@ -1,0 +1,23 @@
+{% import "app/controllers/variables.njk" as vars%}
+{#
+   // ------------------------------------------------------------------------------
+   // HEAD
+   //
+   // For SEO purposes, title should not exceed 65 chars.
+   // For SEO purposes, description should not exceed 160 chars.
+   // ------------------------------------------------------------------------------
+#}
+{% macro head(title, description) -%}
+<head>
+   <meta charset="{{ vars.characterSet }}">
+   <title>{{ title }}</title>
+   <meta name="description" content="{{ description }}">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   {# Include the contents of each of the following blocks, all of which are <link> elements to CSS files. -#}
+   {% include 'app/controllers/blocks/css/display-font.njk' %}
+   {% include 'app/controllers/blocks/css/reading-font.njk' %}
+   {% include 'app/controllers/blocks/css/font-awesome-css.njk' %}
+   {% include 'app/controllers/blocks/css/main-css.njk' %}
+</head>
+{%- endmacro %}
