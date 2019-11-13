@@ -1,0 +1,15 @@
+{
+  "electric_charges": [{
+    "supplier": {
+      "generation_service_charge": 0.08123
+    },
+    "delivery": {
+      "distribution_customer_service_charge": 9.44000,
+      "transmission_charge": 0.02928,
+      "electric_system_improvements": 0.00246,
+      "distribution_charge_per_kwh": 0.05739,
+      "fmcc_delivery_charge": 0.00890,
+      "combined_public_benefit_charge": 0.01259
+    }
+  }]
+}

@@ -1,0 +1,38 @@
+{%- import 'app/controllers/variables.njk' as vars -%}
+{%- import 'app/controllers/macros/nonlayouts.njk' as nonlayouts -%}
+{%- import 'app/controllers/macros/layouts.njk' as layouts -%}
+<!DOCTYPE html>
+<html lang="en">
+{{ nonlayouts.head(vars.title, vars.description) }}
+<body>
+   <table>
+      <thead>
+         <tr>
+            <th>Supplier</th>
+            <td>Rate</td>
+            <td><abbr title="killowatt hours">kWh</abbr> Used</td>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td>Generation Service Charge</td><td>{{ electric_charges[0].supplier.generation_service_charge }}</td><td></td>
+         </tr>
+      </tbody>
+   </table>
+
+   <table>
+      <thead>
+         <tr>
+            <th>Delivery</th>
+            <td>Rate</td>
+            <td><abbr title="killowatt hours">kWh</abbr> Used</td>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td>Distribution Customer Service Charge</td><td>{{ electric_charges[0].delivery.distribution_customer_service_charge }}</td><td></td>
+         </tr>
+      </tbody>
+   </table>
+</body>
+</html>
