@@ -1,0 +1,72 @@
+<style>
+:root {
+   font-size: 18px;
+   font-family: Dosis, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: Staatliches, cursive;
+}
+
+h1 {
+   text-align: center;
+}
+
+table {
+   border-collapse: collapse;
+   margin: auto;
+}
+
+table:first-of-type {
+   border-top: 1px solid black;
+   border-right: 1px solid black;
+   border-left: 1px solid black;
+}
+
+table:last-of-type {
+   border-right: 1px solid black;
+   border-bottom: 1px solid black;
+   border-left: 1px solid black;
+}
+
+thead {
+   background-color: #eee;
+}
+
+td {
+   border: 1px solid black;
+}
+
+th:not(:last-of-type) {
+   border-right: 1px solid black;
+   padding: 20px;
+}
+
+td {
+   text-align: center;
+   padding: 12px;
+}
+
+td:first-of-type {
+   width: 300px;
+}
+
+tbody td:nth-child(2),
+td:nth-child(3) {
+   width: 100px;
+}
+
+tbody td:nth-child(4) {
+   width: 400px;
+}
+
+tfoot > tr > th[colspan='3'] {
+   text-align: right;
+   padding-right: 12px;
+}
+</style>

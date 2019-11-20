@@ -1,0 +1,90 @@
+{%- import 'app/controllers/variables.njk' as vars -%}
+{%- import 'app/controllers/macros/nonlayouts.njk' as nonlayouts -%}
+{%- import 'app/controllers/macros/layouts.njk' as layouts -%}
+<!DOCTYPE html>
+<html lang="en">
+{{ nonlayouts.head(vars.title, vars.description) }}
+<body>
+   <header>
+      <h1>Electric Bill</h1>
+   </header>
+   <table>
+      <thead>
+         <tr>
+            <th>Supplier</th>
+            <th>Rate</th>
+            <th><abbr title="killoWatt hours">kWh</abbr> Used</th>
+            <th>Total</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td>Generation Service Charge</td>
+            <td>{{ electric_charges[0].supplier.generation_service_charge }}</td>
+            <td>{{ vars.total_usage }}</td>
+            <td>{{ vars.total_usage * electric_charges[0].supplier.generation_service_charge }}</td>
+         </tr>
+      </tbody>
+   </table>
+   <table>
+      <thead>
+         <tr>
+            <th>Delivery</th>
+            <th>Rate</th>
+            <th><abbr title="killowatt hours">kWh</abbr> Used</th>
+            <th>Total</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td>Distribution Customer Service Charge</td>
+            <td>{{ electric_charges[0].delivery.distribution_customer_service_charge }}</td>
+            <td>N/A</td>
+            <td>{{ electric_charges[0].delivery.distribution_customer_service_charge }}</td>
+         </tr>
+         <tr>
+            <td>Transmission Charge</td>
+            <td>{{ electric_charges[0].delivery.transmission_charge }}</td>
+            <td>{{ vars.total_usage }}</td>
+            <td>{{ vars.total_usage * electric_charges[0].delivery.transmission_charge }}</td>
+         </tr>
+         <tr>
+            <td>Electric System Improvements</td>
+            <td>{{ electric_charges[0].delivery.electric_system_improvements }}</td>
+            <td>{{ vars.total_usage }}</td>
+            <td>{{ vars.total_usage * electric_charges[0].delivery.electric_system_improvements }}</td>
+         </tr>
+         <tr>
+            <td>Distribution Charge per kWh</td>
+            <td>{{ electric_charges[0].delivery.distribution_charge_per_kwh }}</td>
+            <td>{{ vars.total_usage }}</td>
+            <td>{{ vars.total_usage * electric_charges[0].delivery.distribution_charge_per_kwh }}</td>
+         </tr>
+         <tr>
+            <td>FMCC Delivery Charge</td>
+            <td>{{ electric_charges[0].delivery.fmcc_delivery_charge }}</td>
+            <td>{{ vars.total_usage }}</td>
+            <td>{{ vars.total_usage * electric_charges[0].delivery.fmcc_delivery_charge }}</td>
+         </tr>
+         <tr>
+            <td>Combined Public Benefit Charge</td>
+            <td>{{ electric_charges[0].delivery.combined_public_benefit_charge }}</td>
+            <td>{{ vars.total_usage }}</td>
+            <td>{{ vars.total_usage * electric_charges[0].delivery.combined_public_benefit_charge }}</td>
+         </tr>
+      </tbody>
+      <tfoot>
+         <tr>
+            <th colspan="3">Total</th>
+            <td>{{ (vars.total_usage * electric_charges[0].supplier.generation_service_charge) +
+                   (electric_charges[0].delivery.distribution_customer_service_charge) +
+                   (vars.total_usage * electric_charges[0].delivery.transmission_charge) +
+                   (vars.total_usage * electric_charges[0].delivery.electric_system_improvements) +
+                   (vars.total_usage * electric_charges[0].delivery.distribution_charge_per_kwh) +
+                   (vars.total_usage * electric_charges[0].delivery.fmcc_delivery_charge) +
+                   (vars.total_usage * electric_charges[0].delivery.combined_public_benefit_charge) }}</td>
+         </tr>
+      </tfoot>
+   </table>
+</body>
+</html>
