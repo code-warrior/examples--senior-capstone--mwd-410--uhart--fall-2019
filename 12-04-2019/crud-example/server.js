@@ -4,32 +4,46 @@ const nunjucks = require(`nunjucks`);
 const bodyParser = require(`body-parser`);
 const mongoDB = require(`mongodb`);
 const mongoClient = mongoDB.MongoClient;
-const dbURL = `mongodb://localhost:27017`;
+const HOST = `localhost`;
+const dbPort = `27017`;
+const dbURL = `mongodb://${HOST}`;
 const dbName = `project`;
 const dbCollection = `users`;
 const PORT = 3000;
+const port = (process.env.PORT || PORT);
+const colors = {
+    reset: `\x1b[0m`,
+    red: `\x1b[31m`,
+    green: `\x1b[32m`,
+    yellow: `\x1b[33m`,
+};
 
 let db;
-let port;
-
-mongoClient.connect(dbURL, {useUnifiedTopology: true}, (err, client) => {
-    if (err) {
-        return console.log(err);
-    }
-
-    db = client.db(dbName);
-    port = (process.env.PORT || PORT);
-
-    app.listen(port, () => {
-        console.log(
-            `Connection to Mongo successful. Visit http://localhost:${port}\n`
-        );
-    });
-});
 
 nunjucks.configure(`views`, {
     express: app,
     autoescape: true
+});
+
+mongoClient.connect(`${dbURL}:${dbPort}`, (err, client) => {
+    if (err) {
+        return console.log(err);
+    } else {
+        db = client.db(dbName);
+
+        console.log(`MongoDB successfully connected:`);
+        console.log(`\tMongo URL:`, colors.green, dbURL, colors.reset);
+        console.log(`\tMongo port:`, colors.green, dbPort, colors.reset);
+        console.log(`\tMongo database name:`,
+            colors.green, dbName, colors.reset, `\n`);
+    }
+});
+
+app.listen(port, HOST, () => {
+    console.log(`Host successfully connected:`);
+    console.log(`\tServer URL:`, colors.green, `localhost`, colors.reset);
+    console.log(`\tServer port:`, colors.green, port, colors.reset);
+    console.log(`\tVisit http://localhost:${port}\n`);
 });
 
 // Express’ way of setting a variable. In this case, “view engine” to “njk”.
@@ -46,8 +60,9 @@ app.use(bodyParser.json());
 app.use(express.static(`public`));
 
 /**
- * All req(uests) are from the client/browser.
- * All res(ponses) are to the client/browser.
+ * Note:
+ *    — All req(uests) are from the client/browser.
+ *    — All res(ponses) are to the client/browser.
  */
 
 /**
@@ -55,7 +70,8 @@ app.use(express.static(`public`));
  */
 app.get(`/`, (req, res) => {
     console.log(`User requested root of web site.`);
-    console.log(`Responding to request by submitting index.html via GET to the user.\n`);
+    console.log(`Responding to request with file`,
+        colors.green, `index.njk`, colors.reset, `via GET.`);
 
     res.render(`index.njk`);
 });
@@ -69,8 +85,9 @@ app.get(`/read-a-db-record`, (req, res) => {
         if (err) {
             return console.log(err);
         } else {
-            console.log(`User requested http://localhost:${port}/read-a-db-record.`);
-            console.log(`Responding to request by submitting read-from-database.njk via GET to the user.\n`);
+            console.log(`User requested http://${HOST}:${port}/read-a-db-record.`);
+            console.log(`Responding to request with file`,
+                colors.green, `read-from-database.njk`, colors.reset, `via GET.\n`);
 
             res.render(`read-from-database.njk`, {mongoDBArray: arrayObject});
         }
@@ -78,70 +95,62 @@ app.get(`/read-a-db-record`, (req, res) => {
 });
 
 /**
- *
+ * This route is invoked when a user visits
+ * http://localhost:3000/create-a-db-record/.
  */
 app.get(`/create-a-db-record`, (req, res) => {
     res.render(`create-a-record-in-database.njk`);
 });
 
 /**
- * POST method route
+ * This route is invoked when a POST request from the form in
+ * create-a-record-in-database.njk is submitted.
  */
-app.post(`/create-a-record`, (req, res) => {
+app.post(`/create-a-db-record`, (req, res) => {
     db.collection(dbCollection).insertOne(req.body, (err) => {
         console.log(req.body);
 
         if (err) {
             return console.log(err);
         } else {
-            console.log(`Inserted a single record into Mongo via an HTML form using POST.\n`);
+            console.log(
+                `Inserted one record into Mongo via an HTML form using POST.\n`);
 
             res.redirect(`/read-a-db-record`);
         }
     });
 });
 
-/**
- * PUT method route
- */
-app.put(`/edbob`, (req, res) => {
-    db.collection(dbCollection)
-        .findOneAndUpdate({name: `Yoda`}, {
-            $set: {
-                name: req.body.name,
-                quote: req.body.quote
-            }
-        },
-        {
-            sort: {_id: -1},
-            upsert: true
-        },
-        (err, result) => {
-            if (err) {
-                return res.send(err);
-            } else {
-                console.log(`Updated a single document in Mongo via PUT.`);
+app.get(`/update-a-db-record`, (req, res) => {
+    db.collection(dbCollection).find().toArray((err, arrayObject) => {
+        if (err) {
+            return console.log(err);
+        } else {
+            console.log(`User requested the resource ` +
+                `http://${HOST}:${port}/update-a-db-record`);
 
-                res.send(result);
-            }
-        });
+            res.render(`update-a-record-in-database.njk`,
+                {mongoDBArray: arrayObject});
+        }
+    });
 });
 
-app.get(`/delete-a-db-record`, (req, res) => {
-    res.render(`delete-a-record-in-database.njk`);
-});
+app.post(`/update-a-db-record`, (req, res) => {
+    let nameFromForm = req.body.name;
 
-/**
- * DELETE method route
- */
-app.delete(`/users`, (req, res) => {
-    db.collection(dbCollection)
-        .findOneAndDelete({name: req.body.name}, (err, result) => {
+    db.collection(dbCollection).update(
+        {name: nameFromForm},
+        req.body
+    ).then(() => {
+        db.collection(dbCollection).find().toArray((err, arrayObject) => {
             if (err) {
-                return res.send(500, err);
+                return console.log(err);
             } else {
-                res.send(`Deleted a single document in Mongo via DELETE.`);
-                console.log(`Deleted a single document in Mongo via DELETE.`);
+                console.log(
+                    `Updated one record into Mongo via an HTML form using POST.\n`);
+
+                res.render(`read-from-database.njk`, {mongoDBArray: arrayObject});
             }
         });
+    }) ;
 });

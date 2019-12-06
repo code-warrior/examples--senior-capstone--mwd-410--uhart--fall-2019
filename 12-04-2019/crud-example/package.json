@@ -1,5 +1,5 @@
 {
-  "name": "crud-example",
+  "name": "crud-express-mongo",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",

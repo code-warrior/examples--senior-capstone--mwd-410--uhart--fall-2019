@@ -15,15 +15,16 @@
    <nav>
       <ul>
          <li><a href="/">🏠</a></li>
-         <li><a href="/create-a-db-record/">Create</a></li>
+         <li><a class="current" href="/create-a-db-record/">Create</a></li>
          <li><a href="/read-a-db-record/">Read</a></li>
+         <li><a href="/update-a-db-record/">Update</a></li>
       </ul>
    </nav>
    <main>
       <section>
          <h2>Create/Insert a New Record Into the Database</h2>
-         <form action="/create-a-record" method="POST">
-            <input type="text" placeholder="name" name="name">
+         <form action="/create-a-db-record" method="POST">
+            <input autofocus type="text" placeholder="name" name="name">
             <input type="password" placeholder="password" name="password">
             <button type="submit">Submit</button>
          </form>
