@@ -154,3 +154,17 @@ app.post(`/update-a-db-record`, (req, res) => {
         });
     }) ;
 });
+
+app.get(`/delete-a-db-record`, (req, res) => {
+    db.collection(dbCollection).find().toArray((err, arrayObject) => {
+        if (err) {
+            return console.log(err);
+        } else {
+            console.log(`User requested the resource ` +
+                colors.green, `http://${HOST}:${port}/delete-a-db-record`, colors.reset);
+
+            res.render(`delete-a-record-in-database.njk`,
+                {mongoDBArray: arrayObject});
+        }
+    });
+});
