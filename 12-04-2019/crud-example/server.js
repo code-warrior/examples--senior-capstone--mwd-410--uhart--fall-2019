@@ -138,7 +138,7 @@ app.get(`/update-a-db-record`, (req, res) => {
 app.post(`/update-a-db-record`, (req, res) => {
     let nameFromForm = req.body.name;
 
-    db.collection(dbCollection).update(
+    db.collection(dbCollection).updateOne(
         {name: nameFromForm},
         req.body
     ).then(() => {
